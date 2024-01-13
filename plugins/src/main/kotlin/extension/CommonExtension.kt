@@ -41,7 +41,7 @@ fun CommonExtension<*, *, *, *, *>.androidConfig(project: Project) {
     }
 
     testOptions {
-        unitTests.isReturnDefaultValues = true
+//        unitTests.isReturnDefaultValues = true
     }
 
     lint {

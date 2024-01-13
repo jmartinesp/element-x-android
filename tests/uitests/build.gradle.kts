@@ -21,12 +21,18 @@ import extension.allServicesImpl
 plugins {
     id("io.element.android-compose-library")
     alias(libs.plugins.ksp)
-    alias(libs.plugins.paparazzi)
+//    alias(libs.plugins.paparazzi)
+    id("io.github.takahirom.roborazzi")
 }
 
 android {
     // Keep it as short as possible
     namespace = "ui"
+
+    testOptions {
+        unitTests.isReturnDefaultValues = true
+        unitTests.isIncludeAndroidResources = true
+    }
 }
 
 // Workaround: `kover` tasks somehow trigger the screenshot tests with a broken configuration, removing
@@ -41,8 +47,13 @@ tasks.withType<Test> {
 
 dependencies {
     testImplementation(libs.test.junit)
-    testImplementation(libs.test.parameter.injector)
+//    testImplementation(libs.test.parameter.injector)
     testImplementation(projects.libraries.designsystem)
+    testImplementation("org.robolectric:robolectric:4.11.1")
+    testImplementation(libs.androidx.test.ext.junit)
+    testImplementation(libs.androidx.compose.ui.test.junit)
+    testImplementation("io.github.takahirom.roborazzi:roborazzi:1.9.0-alpha-4")
+    testImplementation("io.github.takahirom.roborazzi:roborazzi-compose:1.9.0-alpha-4")
     ksp(libs.showkase.processor)
     kspTest(libs.showkase.processor)
 

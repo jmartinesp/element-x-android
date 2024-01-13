@@ -40,6 +40,7 @@ plugins {
     alias(libs.plugins.ktlint)
     alias(libs.plugins.dependencygraph)
     alias(libs.plugins.sonarqube)
+    id("io.github.takahirom.roborazzi") version "1.9.0-alpha-4" apply false
 }
 
 tasks.register<Delete>("clean").configure {
