@@ -50,7 +50,7 @@ internal fun TimelineItemCallNotifyView(
     Row(
         modifier = modifier
             .fillMaxWidth()
-            .border(1.dp, ElementTheme.colors.borderInteractiveSecondary, RoundedCornerShape(8.dp))
+            .border(5.dp, ElementTheme.colors.borderInteractiveSecondary, RoundedCornerShape(8.dp))
             .combinedClickable(
                 enabled = true,
                 onClick = {},
