@@ -83,7 +83,7 @@ fun RoomSelectView(
         SelectedRooms(
             selectedRooms = selectedRooms,
             onRemoveRoom = ::onRoomRemoved,
-            modifier = Modifier.padding(vertical = 16.dp)
+            modifier = Modifier.padding(vertical = 20.dp)
         )
     }
 
